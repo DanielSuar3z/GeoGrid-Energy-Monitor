@@ -12,7 +12,7 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'proyectofinal_webmapping',
-    password: 'root',
+    password: 'postgres123',
     port: 5432,
 });
 
@@ -31,7 +31,7 @@ app.get('/api/subestaciones', async (req, res) => {
                 'geometry',   ST_AsGeoJSON(geom)::jsonb,
                 'properties', to_jsonb(inputs) - 'geom'
               ) AS feature
-              FROM (SELECT nombre, voltaje, estado, geom FROM subestaciones_energia) inputs
+              FROM (SELECT nombre_subestacion AS nombre, tension AS voltaje, geom FROM subestaciones_energia) inputs
             ) features;
         `;
         
