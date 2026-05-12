@@ -11,7 +11,7 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'proyectofinal_webmapping',
-    password: 'root',
+    password: 'postgres123',
     port: 5432,
 });
 
